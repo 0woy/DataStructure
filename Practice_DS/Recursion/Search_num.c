@@ -11,7 +11,7 @@
 #include<stdio.h>
 
 int main() {
-
+	printf("학번: 20204624\n이름: 박윤아\n\n");
 	FILE *fp;			// 파일을 읽어오기 위한 변수
 	int arr[15];		// 15개의 숫자를 담을 배열 선언
 	int num, i, count;	// num: 사용자 입력 /  i: 배열 index / count: 찾는 숫자 개수
