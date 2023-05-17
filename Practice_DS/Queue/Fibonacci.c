@@ -1,3 +1,9 @@
+/*
+프로그램 설명: 피보나치 수열을 효과적으로 계산하기 위해 큐를 이용할 수 있음
+큐의 처음에는 F(0), F(1)값이 들어있어 다음 F(2)를 계산할 때는 F(0)을 큐에서 제거 후,
+계싼된 F(b)를 다시 큐에 삽입한다.
+*/
+
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<stdlib.h>
@@ -48,7 +54,7 @@ element peek(Queue* q) {
 }
 
 int main() {
-
+	printf("이름: 박윤아\n학번:20204624\n\n");
 	Queue q;	// 큐 변수 q 선언
 	init(&q);	// q 초기화
 
@@ -58,10 +64,10 @@ int main() {
 	int n;	
 	printf("숫자를 입력하세요: ");
 	scanf("%d", &n);
-	printf("0 1 ");
 	for (int i = 0; i < n; i++) {
 		element n1 = deque(&q);	//F(n-2)의 값 받아옴
 		element n2 = peek(&q);	//F(n-1)의 값 받아옴
+		if (i == 0) printf("%d %d ", n1, n2);	// 처음에 저장돼 있는 F(0), F(1)값 출력
 		printf("%d ", n1 + n2);	// F(n-2) + F(n-1) 출력
 		enque(&q, n1 + n2);		// F(n-2) + F(n-1) 값 큐에 삽입
 	}
